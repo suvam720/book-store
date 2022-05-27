@@ -31,7 +31,7 @@ func CreateBook(c *gin.Context) {
 
 	book := handlrs.CreateBook(CreateBook)
 
-	c.JSON(http.StatusOK, gin.H{"created": book})
+	c.JSON(http.StatusCreated, gin.H{"created": book})
 }
 
 func DeleteBook(c *gin.Context) {
@@ -39,7 +39,7 @@ func DeleteBook(c *gin.Context) {
 
 	bookDetails := handlrs.DeleteBook(id)
 
-	c.JSON(http.StatusOK, gin.H{"data": bookDetails.DeletedAt.Time})
+	c.JSON(http.StatusOK, gin.H{"message": "item deleted", "data": bookDetails.ID})
 }
 
 func UpdateBook(c *gin.Context) {
