@@ -6,7 +6,6 @@ import (
 )
 
 func Routes() *gin.Engine {
-	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 	r.POST("/books", controllers.CreateBook)
 	r.GET("/books", controllers.GetBooks)

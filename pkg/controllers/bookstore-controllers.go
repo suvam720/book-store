@@ -22,7 +22,7 @@ func GetBookById(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error})
 	}
-	c.JSON(http.StatusOK, gin.H{"book": books})
+	c.JSON(http.StatusOK, gin.H{"data": books})
 }
 
 func CreateBook(c *gin.Context) {
@@ -31,7 +31,7 @@ func CreateBook(c *gin.Context) {
 
 	book := handlrs.CreateBook(CreateBook)
 
-	c.JSON(http.StatusCreated, gin.H{"created": book})
+	c.JSON(http.StatusCreated, gin.H{"data": book})
 }
 
 func DeleteBook(c *gin.Context) {

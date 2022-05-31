@@ -9,7 +9,7 @@ import (
 func CreateBook(b *models.Book) *models.Book {
 	//models.Db.NewRecord(b)
 	database.Db.Create(&b)
-	
+
 	return b
 }
 
@@ -30,7 +30,7 @@ func GetBookById(Id string) (*models.Book, *gorm.DB) {
 func DeleteBook(Id string) models.Book {
 	var Book models.Book
 	database.Db.Where("ID=?", Id).Delete(Book)
-	
+
 	return Book
 }
 
