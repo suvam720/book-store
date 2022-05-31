@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: mysql-instance
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    command: mysqld --sql_mode=""
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=store
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
