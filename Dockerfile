@@ -1,8 +1,9 @@
 FROM  golang:1.18-alpine3.15
-RUN mkdir /app
-WORKDIR /app
-ADD . /app
+WORKDIR /myapp
+COPY go.mod .
+COPY go.sum .
 RUN go mod download
-RUN go build -o /app
-
-CMD ["/app"]
+COPY . .
+RUN go build -o app
+EXPOSE 8080
+CMD ["./app"]
