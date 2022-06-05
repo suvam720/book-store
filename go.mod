@@ -7,6 +7,8 @@ require (
 	gorm.io/gorm v1.23.5
 )
 
+require github.com/jinzhu/gorm v1.9.16 // indirect
+
 require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.7.7
