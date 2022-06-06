@@ -7,7 +7,6 @@ import (
 )
 
 func CreateBook(b *models.Book) *models.Book {
-	//models.Db.NewRecord(b)
 	database.Db.Create(&b)
 
 	return b
